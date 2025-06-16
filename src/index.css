@@ -1,11 +1,67 @@
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-Regular.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-Medium.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  src: url("../src/assets/fonts/FunnelDisplay/FunnelDisplay-ExtraBold.ttf");
+  font-weight: 800;
+}
+
 @import "tailwindcss";
+@import "tailwindcss/utilities";
 
 @theme {
-  --font-poppins: Poppins, sans-serif;
-
-  --shadow-lg-br: 6px 6px 12px 5px lightgray, 
-                  4px 4px 6px -5px lightgray,
-                  -6px -6px 12px 5px white,
-                  -4px -4px 6px -5px white,
-                  10px 10px 50px -5px lightgray inset;
+  /* --font-poppins: Poppins, sans-serif; */
+  --animate-draw: draw 0.65s ease-in-out forwards;
+  @keyframes draw {
+    from{
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+    to{
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+    }
+  }
 }
+
+.neu-crater {
+  box-shadow:
+    6px 6px 8px 5px rgba(128, 128, 128, .33),
+    -6px -6px 8px 5px rgba(255, 255, 255, .75),
+    10px 10px 50px -5px rgba(128, 128, 128, .25) inset;
+}
+.neu-plateau {
+  box-shadow:
+    6px 6px 8px 5px rgba(128, 128, 128, .33),
+    -6px -6px 8px 5px rgba(255, 255, 255, .75),
+    -10px -10px 8px -8px rgba(128, 128, 128, .25) inset;
+}
+
