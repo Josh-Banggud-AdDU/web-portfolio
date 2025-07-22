@@ -40,6 +40,7 @@
 @theme {
   /* --font-poppins: Poppins, sans-serif; */
   --animate-draw: draw 0.65s ease-in-out forwards;
+  
   @keyframes draw {
     from{
       stroke-dasharray: 1;
@@ -50,18 +51,74 @@
       stroke-dashoffset: 0;
     }
   }
+
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+ 
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+ 
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
 }
 
 .neu-crater {
   box-shadow:
     6px 6px 8px 5px rgba(128, 128, 128, .33),
     -6px -6px 8px 5px rgba(255, 255, 255, .75),
-    10px 10px 50px -5px rgba(128, 128, 128, .25) inset;
+    10px 10px 20px -10px rgba(128, 128, 128, .25) inset;
 }
 .neu-plateau {
   box-shadow:
-    6px 6px 8px 5px rgba(128, 128, 128, .33),
-    -6px -6px 8px 5px rgba(255, 255, 255, .75),
+    4px 4px 8px 5px rgba(128, 128, 128, .33),
+    -4px -4px 8px 5px rgba(255, 255, 255, .75),
     -10px -10px 8px -8px rgba(128, 128, 128, .25) inset;
 }
+.neu-plateau-sm {
+  box-shadow:
+    2px 2px 4px 3px rgba(128, 128, 128, 0.33),
+    -2px -2px 4px 3px rgba(255, 255, 255, 0.75),
+    -5px -5px 4px -4px rgba(128, 128, 128, 0.25) inset;
+}
 
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
